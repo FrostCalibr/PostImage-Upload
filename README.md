@@ -1,6 +1,6 @@
 # postimg-upload
 
-A lightweight screenshot-to-link tool for Hyprland. Take a screenshot, automatically upload it to postimages.org, and copy the direct link to your clipboard — all in one keybind.
+A lightweight screenshot-to-link tool. Take a screenshot, automatically upload it to postimages.org, and copy the direct link to your clipboard — all in one keybind.
 
 ## How it works
 
@@ -41,32 +41,12 @@ CLIPBOARD_CMD = "wl-copy"                                # Clipboard tool
 NOTIFY = True                                            # Show notification after upload
 ```
 
-3. Add a keybind in your `hyprland.conf`:
-
-```
-bind = SUPER SHIFT, S, exec, python /path/to/postimg-upload.py
-```
-
-4. Add a windowrule to keep the browser out of your way:
-
-```
-windowrule {
-    name = postimg-browser
-    match:title = ^(.*)Google Chrome for Testing(.*)$
-    workspace = 7 silent
-}
-```
-
-5. Optionally set the screenshots directory as default for all grimblast keybinds in `hyprland.conf`:
-
-```
-env = XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots
-```
 
 ## Note
 
-Headless mode is intentionally disabled — postimages.org blocks headless browsers. The browser runs on a separate workspace and closes automatically after upload.
+-Headless mode is intentionally disabled — postimages.org blocks headless browsers. The browser runs on a separate workspace and closes automatically after upload.
 
+-If you need more than copying direct link like Indirect link, markdown etc.. open an issue. 
 ## License
 
 MIT
